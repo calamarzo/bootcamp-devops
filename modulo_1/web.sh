@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#sin fichero, parametro 1 web y parametro 2 palabra
+
 if [ -z "$1" ]
 then
         echo "Dame una web en formato entero (ej.: https://lemoncode.net)"
