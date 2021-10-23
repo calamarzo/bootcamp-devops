@@ -21,7 +21,7 @@ services:
     build: 
       context: ./frontend
     ports:
-      - "8000:3000"
+      - "8080:3000"
     restart: always
     networks: 
       - lemoncode-challenge
