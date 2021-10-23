@@ -1,0 +1,31 @@
+version: "3.9" 
+services:
+  some-mongo:
+    image: mongo:latest
+    volumes:
+      - db_data:/data/db
+    restart: always
+    networks: 
+      - lemoncode-challenge
+  topics-api:
+    depends_on:
+      - some-mongo
+    build:
+      context: ./backend
+    restart: always
+    networks: 
+      - lemoncode-challenge
+  frontend:
+    depends_on:
+      - topics-api
+    build: 
+      context: ./frontend
+    ports:
+      - "8000:3000"
+    restart: always
+    networks: 
+      - lemoncode-challenge
+volumes:
+    db_data:  
+networks:
+    lemoncode-challenge: 
