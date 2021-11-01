@@ -9,16 +9,16 @@ else
 fi
 
 #empezamos con las tareas
-#creamos directorio
+#creamos directorios
 mkdir -p foo
+mkdir -p foo/dummy
+mkdir -p empty
 #creamos fichero file1 con texto
-touch foo/file1.txt
-echo $TEXT > foo/file1.txt
+touch foo/dummy/file1.txt
+echo $TEXT > foo/dummy/file1.txt
 #creamos fichero file2 vacio
-touch foo/file2.txt
+touch foo/dummy/file2.txt
 #copiamos contenido entre ficheros
-cat foo/file1.txt > foo/file2.txt
-#creamos nuevo directorio
-mkdir -p dummy
-#movemos file2 a directorio dummy
-mv foo/file2.txt dummy/file2.txt
+cat foo/dummy/file1.txt > foo/dummy/file2.txt
+#movemos file2 a directorio empty
+mv foo/dummy file2.txt empty/file2.txt
