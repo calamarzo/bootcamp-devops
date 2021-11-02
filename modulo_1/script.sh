@@ -12,7 +12,7 @@ fi
 #creamos directorios
 mkdir -p foo
 mkdir -p foo/dummy
-mkdir -p empty
+mkdir -p foo/empty
 #creamos fichero file1 con texto
 touch foo/dummy/file1.txt
 echo $TEXT > foo/dummy/file1.txt
@@ -21,4 +21,4 @@ touch foo/dummy/file2.txt
 #copiamos contenido entre ficheros
 cat foo/dummy/file1.txt > foo/dummy/file2.txt
 #movemos file2 a directorio empty
-mv foo/dummy file2.txt empty/file2.txt
+mv foo/dummy/file2.txt foo/empty/file2.txt
